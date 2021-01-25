@@ -1,0 +1,128 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+
+body  {
+  font-family: 'Arial' , sans-serif;
+  background-color: rgb(44, 43, 43);
+}
+
+
+nav {
+    background: lime;
+    color: black;
+    display: flex;
+    justify-content: space-between;
+}
+nav .mainMenu {
+    display: flex;
+    list-style: none;
+}
+
+nav .mainMenu li{
+    padding: 6px 0;
+}
+
+nav .mainMenu li a {
+    position: relative;
+    display: block;
+    text-decoration: none;
+    font-family: "Lato";
+    font-size: 40px;
+    color: white;
+    text-transform: uppercase;
+    padding: 12px ;
+    transition: 0.6s;
+    font-weight: bold;
+}
+
+nav .mainMenu li a::after {
+    position: absolute;
+    content: "";
+    width: 100%;
+    height: 3px;
+    top: 100%;
+    left: 0;
+    background: yellow;
+    transition: transform 0.5s;
+    transform: scaleX(0);
+    transform-origin: right; 
+}
+
+nav .mainMenu li a:hover {
+    color: black;
+}
+
+nav .mainMenu li a:hover::after {
+    transform: scaleX(1);
+    transform-origin: left; 
+}
+
+nav .openMenu {
+    font-size: 2rem;
+    margin: 20px;
+    display: none;
+    cursor: pointer;
+}
+nav .mainMenu .closeMenu , .icons i {
+    font-size: 2rem;
+    display: none;
+    cursor: pointer;
+}
+.fa-facebook:hover {color: rgb(0, 110, 255);}
+.fa-twitter:hover {color: rgb(86, 154, 243);}
+.fa-instagram:hover {color: rgb(250, 1, 217);}
+.fa-github:hover {color: rgb(255, 123, 0);}
+
+nav .logo {
+    margin: 6px;
+    font-size: 45px;
+    cursor: pointer;
+    transition: 0.6s ease
+}
+
+nav .logo:hover{
+    color: black;
+}
+
+
+@media(max-width: 800px){
+  
+    nav .mainMenu {
+        height: 100vh;
+        position: fixed;
+        top: 0;
+        right: 0;
+        left: 0;
+        z-index: 10;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        background: rgb(133, 2, 2);
+        transition: top 1s ease;
+        display: none;
+    }
+    nav .mainMenu .closeMenu {
+        display: block;
+        position: absolute;
+        top: 20px;
+        right: 20px;
+
+    }
+    nav .openMenu {
+        display: block;
+    }
+    nav .mainMenu li a:hover {
+        color: black;
+    }
+    .icons i {
+        display: inline-block;
+        padding: 12px;
+    }
+
+    nav .logo {
+        font-size: 30px;
+    }
